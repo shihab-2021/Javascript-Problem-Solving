@@ -22,34 +22,6 @@ const names = filterAndReturnNames(peopleData);
 console.log("Task 1");
 console.log("Names: ", names, "\n");
 
-// Task 2: Object Manipulation
-// Create an array of objects representing books with properties like title, author, and year. Write a function that takes the array and returns a new array with only the book titles. Print the result.
-const booksInfo = [
-  { title: "Go through straggle", author: "Jonkar Mahbub", year: "2023" },
-  { title: "Road to success", author: "Napoleon Hill", year: "2020" },
-  { title: "Zero to one", author: "Peter Thiel", year: "2021" },
-];
-
-const getBookTitles = (booksArray) => {
-  const bookTitles = booksArray?.map((book) => book?.title);
-  return bookTitles;
-};
-
-const titles = getBookTitles(booksInfo);
-console.log("Task 2");
-console.log("Titles: ", titles, "\n");
-
-// Task 3: Function Composition
-// Write three functions: one to square a number, one to double a number, and one to add 5 to a number. Compose these functions to create a new function that squares a number, doubles the result, and then adds 5.
-const squareNum = (num) => num * num;
-const doubleNum = (num) => num * 2;
-const addFive = (num) => num + 5;
-const compose = (num) => addFive(doubleNum(squareNum(num)));
-
-const testNum = 5;
-console.log("Task 3");
-console.log("Square, double, then add 5: ", compose(testNum), "\n");
-
 // Task 4: Sorting Objects
 // Create an array of objects representing cars with properties like make, model, and year. Write a function to sort the array of cars by the year of manufacture in ascending order. Print the sorted array.
 const carsInfo = [
@@ -68,33 +40,6 @@ const sortCarsByYear = (carsArray) => {
 const sortedCars = sortCarsByYear(carsInfo);
 console.log("Task 4");
 console.log("Sorted Car Data: ", sortedCars, "\n");
-
-// Task 5: Find and Modify
-// Write a function that searches an array of objects for a specific person by name. If found, modify their age property. Print the updated array.
-const peopleDataForT5 = [
-  { name: "Phoebe", age: 28, gender: "female" },
-  { name: "Joey", age: 25, gender: "male" },
-  { name: "Chandler", age: 28, gender: "male" },
-  { name: "Rechel", age: 23, gender: "female" },
-  { name: "Monica", age: 23, gender: "female" },
-  { name: "Ross", age: 28, gender: "male" },
-];
-
-const findAndUpdateAge = (peopleArray, name, newAge) => {
-  const updatedArray = peopleArray?.map((person) => {
-    if (person?.name === name) {
-      const newPerson = { ...person };
-      newPerson["age"] = newAge;
-      return newPerson;
-    }
-    return person;
-  });
-  return updatedArray;
-};
-
-const updatedPeopleArray = findAndUpdateAge(peopleDataForT5, "Ross", 30);
-console.log("Task 5");
-console.log("Updated People Data: ", updatedPeopleArray, "\n");
 
 // Task 6: Array Reduction
 // Create an array of numbers. Write a function that uses the reduce method to calculate the sum of all even numbers in the array.
